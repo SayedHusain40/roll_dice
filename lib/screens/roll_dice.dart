@@ -11,8 +11,9 @@ class RollDice extends StatefulWidget {
 }
 
 class _RollDiceState extends State<RollDice> {
-  int diceRoller = 1;
 
+  // Initial dice face value
+  int diceRoller = 2;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
