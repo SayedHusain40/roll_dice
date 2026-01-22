@@ -11,8 +11,7 @@ class RollDice extends StatefulWidget {
 }
 
 class _RollDiceState extends State<RollDice> {
-
-  // Initial dice face value
+  // Initial dice value
   int diceRoller = 2;
   @override
   Widget build(BuildContext context) {
@@ -30,16 +29,19 @@ class _RollDiceState extends State<RollDice> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset('assets/images/dice_images/dice-$diceRoller.png'),
-              TextButton(
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.amber,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(13),
+                  ),
+                ),
                 onPressed: () {
                   setState(() {
                     diceRoller = normalizer.nextInt(6) + 1;
                   });
                 },
-                child: Text(
-                  "Roll Dice",
-                  style: TextStyle(color: Colors.white, fontSize: 20),
-                ),
+                child: Text("Roll Dice", style: TextStyle(fontSize: 20)),
               ),
             ],
           ),
